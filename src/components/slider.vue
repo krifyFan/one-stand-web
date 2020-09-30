@@ -263,4 +263,8 @@ div.slider > div:not(.nav_indicators):not(.next_button):not(.prev_button) {
     opacity: 1 !important;
     transition: 0.5s;
 }
+.slider-img {
+    width: 100%;
+    height: 100%;
+}
 </style>

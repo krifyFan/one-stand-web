@@ -30,20 +30,23 @@
         </section>
         <!-- 智能名片小程序等 -->
         <section class="m-program-tabs-wrap">
-            <div class="m-program-titles">
-                <div 
-                    class="item" 
-                    :class="{active: currentPT === index}" 
-                    v-for="(item, index) in programTabs" 
-                    :key="index"
-                    @mouseenter="enterPT(index)"
-                >
-                    <img :src="currentPT === index ? item.activeSrc : item.src" />
-                    <strong>{{item.name}}</strong>
+                <div class="m-program-titles-content">
+            <div class="m-program-titles" ref="programTitle">
+                    <div 
+                        
+                        class="item" 
+                        :class="{active: currentPT === index}" 
+                        v-for="(item, index) in programTabs" 
+                        :key="index"
+                        @mouseenter="enterPT(index)"
+                    >
+                        <img :src="currentPT === index ? item.activeSrc : item.src" />
+                        <strong>{{item.name}}</strong>
+                    </div>
                 </div>
             </div>
             <div class="m-program-body">
-                <div v-for="(item, index) in programBody" :key="index">
+                <div v-for="(item, index) in programBody" :key="index" style="display: inline-block; overflow-x: hidden;">
                     <ProgramBody 
                         v-if="currentPT === index"
                         :programBody="item.dec" 
@@ -390,6 +393,10 @@ export default {
     methods: {
         enterPT(index) {
             this.currentPT = index
+            if (index !== 0 && document.body.offsetWidth < 700) {
+                let ref = this.$refs.programTitle
+                ref.style.transform = `translateX(-${250*index}px)`
+            }
         },
         goToModule(index, pathName) {
             this.currentIndex = index
@@ -458,9 +465,26 @@ export default {
     justify-content: space-between;
     position: relative;
     box-sizing: border-box;
-    padding-left: 80px;
-    padding-right: 80px;    
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+@media screen and (min-width: 960px){
+    .m-program-tabs-wrap .m-program-titles {
+        width: 1200px
+    }
+}
+@media screen and (max-width: 700px){
+    .m-program-tabs-wrap .m-program-titles {
+        width: 700px
+    }
+    .m-program-tabs-wrap .m-program-titles .item {
+        min-width: 200px;
+    }
+}
+.m-program-tabs-wrap .m-program-titles-content {
+    width: initial;
+    height: 100px;
+    border: 1px solid red;
+    overflow: hidden;
 }
 .m-program-tabs-wrap .m-program-titles .item {
     color: #A8E6E5;
@@ -468,11 +492,16 @@ export default {
     padding: 37px 0;
     cursor: pointer;
     display: inline-block;
+    overflow: hidden;
+    margin: 0 auto;
 }
 .m-program-tabs-wrap .m-program-titles .item.active {
     color: #51CDCB;
     border-bottom: 4px solid #51CDCB;
 }
+/* .m-program-tabs-wrap .m-program-titles .item.active + .item{
+    transform: translate(-50%);
+} */
 .m-program-tabs-wrap .m-program-titles .item img {
     width: 36px;
     height: 36px;
