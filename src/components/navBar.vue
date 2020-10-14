@@ -24,13 +24,13 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
+                其他
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a 
                     class="dropdown-item" 
                     href="#"
-                    v-for="(item, index) in menuData" 
+                    v-for="(item, index) in otherMenu" 
                     :key="index" 
                     @click="goToModule(index, item.pathName)"
                 >{{item.name}}</a>
@@ -52,6 +52,10 @@ export default {
                 { name: '客户案例', pathName: '/case' },
                 // { name: '新闻动态', pathName: '/news' },
                 { name: '关于我们', pathName: '/about' }
+            ],
+            otherMenu: [
+                { name: '登录', pathName: 'adminLogin' },
+                { name: '申请加入', pathName: 'apply' }
             ],
             currentIndex: -1
         }

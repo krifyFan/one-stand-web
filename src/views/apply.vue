@@ -3,7 +3,7 @@
         <div class="apply-page-wrap">
             <div class="apply-wrap">
                 <p class="title">申请试用</p>
-                <Form class="apply-form" ref="applyForm" :model="applyForm" :label-width="300" label-position="left" :rules="rulesValidate">
+                <Form class="apply-form" ref="applyForm" :model="applyForm" label-position="left" :rules="rulesValidate">
                     <FormItem label="联系人" prop="name">
                         <Input type="text" v-model="applyForm.name" placeholder="请输入您的姓名" />
                     </FormItem>
@@ -116,5 +116,21 @@ export default {
 .ivu-select >>> .ivu-select-selection {
     border: none;
     outline: none;
+}
+.apply-form .ivu-form-item >>> .ivu-form-item-label {
+        width: 100px !important;
+}
+@media screen and (max-width: 700px){
+    .apply-page-wrap {
+        padding: 10px;
+    }
+    .apply-wrap {
+        width: 100%;
+        margin: 100px auto;
+        padding: 10px;
+    }
+    .apply-form .ivu-form-item >>> .ivu-form-item-label {
+        width: 100px !important;
+    }
 }
 </style>

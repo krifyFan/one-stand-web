@@ -33,18 +33,19 @@
                 </p>
             </div>
             <div class="container">
-                <div class="ss">
-                    <ServiceSupport :ssInfo="ssInfo1"/>
-                </div>
-                <div class="ss">
-                    <ServiceSupport :ssInfo="ssInfo2"/>
-                </div>
-                <div class="ss">
-                    <ServiceSupport :ssInfo="ssInfo3"/>
-                </div>
-                <div class="ss">
-                    <ServiceSupport :ssInfo="ssInfo4"/>
-                </div>
+                <Row>
+                    <Col 
+                        :xs="24" 
+                        :sm="24" 
+                        :md="24" 
+                        :lg="24" 
+                        :xl="{ span: 5, offset: 1 }" 
+                        v-for="(item, index) in ssInfo"
+                        :key="`ServiceSupport${index}`"
+                    >
+                       <ServiceSupport :ssInfo="item"/> 
+                    </Col>
+                </Row>
             </div>
         </section>
         <Footer></Footer>
@@ -394,22 +395,24 @@ export default {
                     ]
                 }
             ],
-            ssInfo1: {
-                title: '专业客服解惑',
-                dec: '实时在线服务每一个客户，耐心解惑每一个问题，悉心处理客户诉求'
-            },
-            ssInfo2: {
-                title: '运营指导',
-                dec: '提供给商家包括产品功能和后台设置的指导和咨询'
-            },
-            ssInfo3: {
-                title: '解决方案提供',
-                dec: '结合行业属性，提供客户具有针对性的解决方案'
-            },
-            ssInfo4: {
-                title: '技术支持',
-                dec: '提供专业技术服务保障，确保客户安全、顺畅的使用'
-            }
+            ssInfo: [
+                {
+                    title: '专业客服解惑',
+                    dec: '实时在线服务每一个客户，耐心解惑每一个问题，悉心处理客户诉求'
+                },
+                {
+                    title: '运营指导',
+                    dec: '提供给商家包括产品功能和后台设置的指导和咨询'
+                },
+                {
+                    title: '解决方案提供',
+                    dec: '结合行业属性，提供客户具有针对性的解决方案'
+                },
+                {
+                    title: '技术支持',
+                    dec: '提供专业技术服务保障，确保客户安全、顺畅的使用'
+                }
+            ]
         }
     },
     methods: {
@@ -454,8 +457,6 @@ export default {
     background: #f8f8f8;
 }
 
-
-
 .main-title {
     font-size: 36px;
     color: rgba(56,56,56,1);
@@ -482,16 +483,12 @@ export default {
     background: #51CDCB;
 }
 .service-title {
-    margin-top: 100px;
+    /* margin-top: 100px; */
     text-align: center;
 }
 .service-title .dec {
     color: grey;
     cursor: pointer;
-}
-.service-support-wrap .container .ss {
-    display: inline-block;
-    vertical-align: middle;
 }
 .service-support-wrap .container {
     text-align: center;
@@ -504,8 +501,10 @@ export default {
 .service-support-wrap {
     background: url('../assets/server-bg.png')  center center;
 }
-.service-support-wrap .container .ss {
-    width: 20%;
-    padding: 1%;
+@media screen and (max-width: 900px){
+    .product-banner {
+        height: auto;
+        margin-top: 0px;
+    }
 }
 </style>

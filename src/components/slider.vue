@@ -267,4 +267,11 @@ div.slider > div:not(.nav_indicators):not(.next_button):not(.prev_button) {
     width: 100%;
     height: 100%;
 }
+
+@media screen and (max-width: 700px){
+    .slider_four_in_line,
+    .slider {
+        height: auto;
+    }
+}
 </style>

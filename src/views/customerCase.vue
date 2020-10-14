@@ -10,12 +10,12 @@
                     :sm="24" 
                     :md="24" 
                     :lg="24" 
-                    :xl="{ span: 7, offset: 1 }" 
+                    :xl="8" 
                     class="case"
                     v-for="(item, index) in caseList"
                     :key="`caseList-${index}`"
                 >
-                    <Case :caseInfo="item"/>
+                    <Case :caseInfo="item" style="margin: 20px"/>
                 </Col>
             </Row>
         </section>
@@ -114,5 +114,13 @@ export default {
 }
 .case-section-wrap {
     margin-top: 2rem;
+}
+@media screen and (max-width: 700px) {
+    .case-banner {
+        height: auto;
+    }
+    .case-section-wrap {
+        margin-top: 0;
+    }
 }
 </style>

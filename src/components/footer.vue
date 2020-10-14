@@ -1,54 +1,66 @@
 <template>
     <div class="footer-wrap">
-        <div class="info-box left-box">
-            <p>
-                <img :src="phone" alt="phone">
-                13718469919&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13801204491
-            </p>
-            <p>
-                <img :src="email">
-                1044085031@qq.com
-            </p>
-            <p>
-                <img :src="address">
-                河北省廊坊市固安县固安镇永定北路156-4号
-            </p>
-        </div>
-        <div class="info-box">
-            <p class="title">官方微信</p>
-            <img :src="officialWX" style="width: 70px">
-        </div>
-        <!-- <div class="info-box or">
-            <p class="title">关注我们</p>
-            <p class="or-wrap">
-                <img :src="weibo" @mouseover="mouseOver" @mouseleave="mouseLeave">
-                <img :src="weiboORCode" class="or-code" v-show="isWB">
-            </p>
-            <p class="or-wrap">
-                <img :src="toutiao" @mouseover="mouseOverTT" @mouseleave="mouseLeaveTT">
-                <img :src="toutiaoORCode" class="or-code" v-show="isTT">
-            </p>
-        </div> -->
-        <div class="info-box about">
-            <p class="title">关于我们</p>
-            <p @click="goToModule('/home')">关于我们</p>
-            <p @click="goToModule('/apply')">加入我们</p>
-        </div>
-        <div class="info-box about">
-            <p class="title">友情连接</p>
-            <p><a href="http://bjszdm.com/" target="_blank" style="color: rgb(165, 165, 165)">北京神州达美科技装修装饰公司</a></p>
-        </div>
-        <!-- <div class="pro-license">
-            <span>
-                © 2019-2020 yimaiai.com 固安云科智能科技有限公司 
-                版权所有   
-                电信经营许可证：
-            </span>
-            <span style="color: #fff">
-                川B2-20190570     
-                蜀ICP备19002747号-2
-            </span>
-        </div> -->
+        <Row>
+            <Col
+                :xs="24" 
+                :sm="24" 
+                :md="24" 
+                :lg="24" 
+                :xl="12" 
+            >
+                <div class="info-box left-box">
+                    <p>
+                        <img :src="phone" alt="phone">
+                        13718469919&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13801204491
+                    </p>
+                    <p>
+                        <img :src="email">
+                        1044085031@qq.com
+                    </p>
+                    <p>
+                        <img :src="address">
+                        河北省廊坊市固安县固安镇永定北路156-4号
+                    </p>
+                </div>
+            </Col>
+            <Col
+                :xs="8" 
+                :sm="8" 
+                :md="8" 
+                :lg="8" 
+                :xl="4" 
+            >
+                <div class="info-box">
+                    <p class="title">官方微信</p>
+                    <img :src="officialWX" style="width: 70px">
+                </div>
+            </Col>
+            <Col
+                :xs="8" 
+                :sm="8" 
+                :md="8" 
+                :lg="8" 
+                :xl="4" 
+            >
+                <div class="info-box about">
+                    <p class="title">关于我们</p>
+                    <p @click="goToModule('/home')">关于我们</p>
+                    <p @click="goToModule('/apply')">加入我们</p>
+                </div>
+            </Col>
+            <Col
+                :xs="8" 
+                :sm="8" 
+                :md="8" 
+                :lg="8" 
+                :xl="4" 
+            >
+                <div class="info-box about">
+                    <p class="title">友情连接</p>
+                    <p><a href="http://bjszdm.com/" target="_blank" style="color: rgb(165, 165, 165)">北京神州达美科技装修装饰公司</a></p>
+                </div>
+            </Col>
+        </Row>
     </div>
 </template>
 <script>
@@ -98,14 +110,14 @@ export default {
     vertical-align: middle;
     height: 100px;
     text-align: center;
-    width: 10%;
+    width: 100%;
 }
 .footer-wrap .info-box .title {
     color: #fff;
     margin-bottom: 15px;
 }
 .info-box.left-box {
-    width: 60%;
+    width: 100%;
 }
 .left-box img {
     vertical-align: middle;
@@ -141,5 +153,14 @@ export default {
     text-align: center;
     font-size: 12px;
     line-height: 24px;
+}
+
+@media screen and (max-width: 700px){
+    .footer-wrap {
+        padding: 10px 5px;
+    }
+    .footer-wrap .info-box {
+        margin-bottom: 5px;
+    }
 }
 </style>

@@ -321,4 +321,10 @@ export default {
 .contract-wrap .email-wrap img {
     margin-left: 95px;
 }
+
+@media screen and (max-width: 700px) {
+    .about-main-wrap {
+        margin-top: 0;
+    }
+}
 </style>

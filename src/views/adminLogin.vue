@@ -25,7 +25,7 @@
                         </Select>
                     </FormItem>
                     <FormItem prop="verCode">
-                        <Input v-model="accountForm.verCode" style="width: 55%; margin-right: 8%"/>
+                        <Input v-model="accountForm.verCode" class="ver-code-input"/>
                         <Button type="info" class="btn">获取验证码</Button>
                     </FormItem>
                     <FormItem>
@@ -133,6 +133,7 @@ export default {
     right: 50px;
     color: #E4E9EA;
 }
+
 .sys img {
     width: 30px;
     height: 18px;
@@ -180,6 +181,23 @@ export default {
 .bottom-text {
     position: absolute;
     bottom: 10px;
-    left: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ver-code-input {
+    width: 55%; 
+    margin-right: 7%
+}
+@media screen and (max-width: 700px){
+    .login-wrap {
+        width: 98%;
+        margin: 10px auto;
+    }
+    .top .sys {
+        left: 10px;
+    }
+    .top .tel {
+        right: 10px;
+    }
 }
 </style>

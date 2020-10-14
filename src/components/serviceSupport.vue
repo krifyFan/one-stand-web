@@ -11,7 +11,7 @@
 export default {
     props: {
         ssInfo: {
-            type: Array,
+            type: Object,
             title: '',
             dec: ''
         }
@@ -25,6 +25,7 @@ export default {
     background: white;
     border: 100%;
     border-radius: 100%;
+    margin-bottom: 20px;
 }
 .info-wrap {
     border: 1px solid gray;
