@@ -1,26 +1,44 @@
 <template>
     <div class="item">
-        <div class="u-function-list">
-            <div 
-                class="u-function-item" 
-                v-for="(item, index) in programBody" 
-                :key="index" 
-                :class="{active: currenItem === index}"
+        <Row>
+            <Col
+                :xs="24" 
+                :sm="24" 
+                :md="24" 
+                :lg="24" 
+                :xl="12" 
             >
-                <h3>
-                    <div></div>
-                    {{item.title}}
-                </h3>
-                <p>{{item.subTitle1}}</p>
-                <p>{{item.subTitle2}}</p>
-            </div>
-            <button class="details-btn">
-                查看详情&nbsp;&nbsp;+
-            </button>
-        </div>
-        <div class="u-img-list">
-            <img :src="programBodyImgs[currenItem].src" />
-        </div>
+                <div class="u-function-list">
+                    <div 
+                        class="u-function-item" 
+                        v-for="(item, index) in programBody" 
+                        :key="index" 
+                        :class="{active: currenItem === index}"
+                    >
+                        <h3>
+                            <div></div>
+                            {{item.title}}
+                        </h3>
+                        <p>{{item.subTitle1}}</p>
+                        <p>{{item.subTitle2}}</p>
+                    </div>
+                    <button class="details-btn">
+                        查看详情&nbsp;&nbsp;+
+                    </button>
+                </div>
+            </Col>
+            <Col
+                :xs="24" 
+                :sm="24" 
+                :md="24" 
+                :lg="24" 
+                :xl="12" 
+            >
+                <div class="u-img-list">
+                    <img :src="programBodyImgs[currenItem].src" />
+                </div>
+            </Col>
+        </Row>
     </div>
 </template>
 <script>

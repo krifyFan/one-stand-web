@@ -546,4 +546,9 @@ export default {
 .ivu-col-span-lg-6 {
     margin-bottom: 1rem;
 }
+@media screen and (max-width: 700px){
+    .charact div {
+        width: auto;
+    }
+}
 </style>

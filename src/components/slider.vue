@@ -270,8 +270,9 @@ div.slider > div:not(.nav_indicators):not(.next_button):not(.prev_button) {
 
 @media screen and (max-width: 700px){
     .slider_four_in_line,
-    .slider {
+    .carousel-wrap {
         height: auto;
+        width: auto;
     }
 }
 </style>
